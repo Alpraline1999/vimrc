@@ -4,7 +4,7 @@ syntax on                                " 语法高亮
 filetype on                              " 开启文件类型检测
 filetype plugin on
 " colorscheme desert
-colorscheme default
+colorscheme desert
 
 set encoding=utf-8                       " 编码设置
 set number                               " 显示行号
@@ -180,7 +180,7 @@ let g:netrw_list_hide= '^\..*' " 不显示隐藏文件 用 a 键就可以显示�
 "     autocmd VimEnter * :Vexplore
 " augroup END
 
-nnoremap <SPACE>ct :Lexplore<CR>    " 打开或关闭目录树
+nnoremap <SPACE>t :Lexplore<CR>    " 打开或关闭目录树
 
 " 快捷键绑定
 let mapleader='\'
