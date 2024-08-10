@@ -1,12 +1,17 @@
 " 让配置变更立即生效
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+" autocmd BufWritePost $MYVIMRC 
 " basic setup
 set modelines=0                          " 禁用模式行（安全措施）
 syntax on                                " 语法高亮
 filetype on                              " 开启文件类型检测
 filetype plugin on
+" 主题
+set background=dark
+colorscheme solarized
+" colorscheme molokai
+" colorscheme phd
 " colorscheme desert
-colorscheme desert
 
 set encoding=utf-8                       " 编码设置
 set number                               " 显示行号
@@ -30,15 +35,16 @@ set nocompatible                         " 去除vi一致性
 set ambiwidth=double                     " 解决中文标点显示的问题
 set nowrap                               " 不自动折行
 set mouse=a                              " 使用鼠标
-set mousehide                            " 输入时隐藏光标
+set mousehide                            " 输入时隐藏鼠标
 " set sidescroll=10                        " 移动到看不见的字符时，自动向右滚动是个字符
 
 set sm!                                  " 高亮显示匹配括号
+set incsearch                            " 搜索高亮
 set hlsearch                             " 高亮查找匹配
 set cursorline                           " 高亮显示当前行
-" hi cursorline guibg=#000000
-" hi CursorColumn guibg=#000000
-" set termguicolors                        " 启用终端真色
+" hi cursorline guibg=#00ff00
+" hi CursorColumn guibg=#00ff00
+set termguicolors                        " 启用终端真色
 
 set showmatch                            " 显示匹配
 set ruler                                " 显示标尺，在右下角显示光标位置
@@ -182,8 +188,6 @@ let g:netrw_list_hide= '^\..*' " 不显示隐藏文件 用 a 键就可以显示�
 "     autocmd VimEnter * :Vexplore
 " augroup END
 
-nnoremap <SPACE>t :Lexplore<CR>    " 打开或关闭目录树
-
 " 快捷键绑定
 let mapleader='\'
 " 窗口移动快捷键
@@ -197,8 +201,8 @@ noremap <TAB>j <C-w><down>
 noremap <space><left> :bp<CR>
 noremap <space><right> :bn<CR>
 " 使用方括号切换tab
-noremap <space>] :tabnext<CR>
-noremap <space>[ :tabprevious<CR>
+noremap <TAB>] :tabnext<CR>
+noremap <TAB>[ :tabprevious<CR>
 " 使用 \ + s 保存, \ + q 退出
 noremap <space>s :w<CR>
 noremap <space>q :q<CR>
@@ -206,7 +210,10 @@ noremap <space>q :q<CR>
 vnoremap <Leader>y "+y
 " 设置快捷键将系统剪贴板内容粘贴至 vim
 nmap <Leader>p "+p
+" 打开或关闭目录树
+nnoremap <SPACE>t :Lexplore<CR>    
 
+" 文件头
 func SetTitle()
     "如果文件类型为.sh文件
     if &filetype == 'sh'
@@ -216,10 +223,9 @@ func SetTitle()
         call append(line(".")+2, "\#    Mail: 1776882398@qq.com ")
         call append(line(".")+3, "\#    Created Time: ".strftime("%c"))
         call append(line(".")+4, "\#########################################################################")
-        call append(line(".")+5, "\#!/bin/bash")
-        call append(line(".")+6, "RED='\\E[1;31m'")
-        call append(line(".")+7, "GREEN='\\E[1;32m'")
-        call append(line(".")+8, "RES='\\E[0m'")
+        call append(line(".")+5, "\#!/usr/bin/bash")
         call append(line(".")+9, "")
     endif
 endfunc
+" 创建文件时自动生成文件头
+autocmd BufNewFile * call SetTitle()
