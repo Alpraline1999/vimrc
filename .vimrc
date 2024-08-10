@@ -37,15 +37,12 @@ set ambiwidth=double                     " 解决中文标点显示的问题
 set nowrap                               " 不自动折行
 set mouse=a                              " 使用鼠标
 set mousehide                            " 输入时隐藏鼠标
-" set sidescroll=10                        " 移动到看不见的字符时，自动向右滚动是个字符
 
 set sm!                                  " 高亮显示匹配括号
 set incsearch                            " 搜索高亮
 set hlsearch                             " 高亮查找匹配
 set cursorline                           " 高亮显示当前行
-" hi cursorline guibg=#00ff00
-" hi CursorColumn guibg=#00ff00
-set termguicolors                        " 启用终端真色
+" set termguicolors                        " 启用终端真色
 
 set showmatch                            " 显示匹配
 set ruler                                " 显示标尺，在右下角显示光标位置
