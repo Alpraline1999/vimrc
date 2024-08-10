@@ -8,10 +8,10 @@ filetype on                              " 开启文件类型检测
 filetype plugin on
 " 主题
 set background=dark
-colorscheme solarized
+" colorscheme solarized
 " colorscheme molokai
 " colorscheme phd
-" colorscheme desert
+colorscheme desert
 
 set encoding=utf-8                       " 编码设置
 set number                               " 显示行号
