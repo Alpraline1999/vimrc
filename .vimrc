@@ -83,18 +83,18 @@ set statusline+=%4*[%l:%v]\
 set statusline+=%5*%p%%\ \|\ 
 set statusline+=%6*%LL\ 
 
-hi User1 cterm=none ctermfg=gray ctermbg=darkgray
-hi User2 cterm=none ctermfg=darkgrey ctermbg=gray
-hi User3 cterm=bold ctermfg=darkgrey ctermbg=gray
-hi User4 cterm=bold ctermfg=yellow ctermbg=gray
-hi User5 cterm=none ctermfg=darkgrey ctermbg=gray
-hi User6 cterm=none ctermfg=darkgrey ctermbg=gray
+hi User1 cterm=none ctermfg=white ctermbg=darkgray
+hi User2 cterm=none ctermfg=black ctermbg=gray
+hi User3 cterm=bold ctermfg=black ctermbg=gray
+hi User4 cterm=bold ctermfg=black ctermbg=gray
+hi User5 cterm=none ctermfg=black ctermbg=gray
+hi User6 cterm=none ctermfg=black ctermbg=gray
 
 " 设置tab栏-------------------------------------------------
 " 选中的tab颜色
-hi SelectTabLine term=Bold cterm=Bold ctermfg=DarkYellow ctermbg=gray
-hi SelectPageNum cterm=Bold ctermfg=DarkRed ctermbg=gray
-hi SelectWindowsNum cterm=Bold ctermfg=DarkCyan ctermbg=gray
+hi SelectTabLine term=Bold cterm=Bold ctermfg=white ctermbg=darkgray
+hi SelectPageNum cterm=Bold ctermfg=green ctermbg=darkgray
+hi SelectWindowsNum cterm=Bold ctermfg=DarkCyan ctermbg=darkgray
 " 未选中状态的tab
 hi NormalTabLine cterm=None ctermfg=Gray ctermbg=DarkGray
 hi NormalPageNum cterm=None ctermfg=Gray ctermbg=DarkGray
