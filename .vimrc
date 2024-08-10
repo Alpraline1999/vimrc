@@ -1,3 +1,5 @@
+" 让配置变更立即生效
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " basic setup
 set modelines=0                          " 禁用模式行（安全措施）
 syntax on                                " 语法高亮
@@ -8,7 +10,7 @@ colorscheme desert
 
 set encoding=utf-8                       " 编码设置
 set number                               " 显示行号
-set relativenumber                       " 显示相对行号
+" set relativenumber                       " 显示相对行号
 set smartindent                          " 智能缩进
 set autoindent                           " 自动对齐
 
@@ -43,7 +45,7 @@ set ruler                                " 显示标尺，在右下角显示光�
 set novisualbell                         " 不要闪烁
 set showcmd                              " 显示输入的命令
 
-" set laststatus=2                         " always show statusline
+set laststatus=2                         " always show statusline
 set showtabline=2                        " always show tabline
 set confirm
 set completeopt=preview,menu
@@ -185,7 +187,7 @@ nnoremap <SPACE>t :Lexplore<CR>    " 打开或关闭目录树
 " 快捷键绑定
 let mapleader='\'
 " 窗口移动快捷键
-noremap <TAB>w <C-w>w
+noremap <TAB>w <C-w>w 
 noremap <TAB>c <C-w>c
 noremap <TAB>h <C-w><left>
 noremap <TAB>l <C-w><right>
@@ -200,6 +202,10 @@ noremap <space>[ :tabprevious<CR>
 " 使用 \ + s 保存, \ + q 退出
 noremap <space>s :w<CR>
 noremap <space>q :q<CR>
+" 设置快捷键将选中文本块复制至系统剪贴板
+vnoremap <Leader>y "+y
+" 设置快捷键将系统剪贴板内容粘贴至 vim
+nmap <Leader>p "+p
 
 func SetTitle()
     "如果文件类型为.sh文件
