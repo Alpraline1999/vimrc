@@ -1,5 +1,5 @@
 " 让配置变更立即生效
-" autocmd BufWritePost $MYVIMRC source $MYVIMRC
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " autocmd BufWritePost $MYVIMRC 
 " basic setup
 set modelines=0                          " 禁用模式行（安全措施）
@@ -12,6 +12,7 @@ set background=dark
 " colorscheme molokai
 " colorscheme phd
 colorscheme desert
+" colorscheme default
 
 set encoding=utf-8                       " 编码设置
 set number                               " 显示行号
@@ -94,15 +95,15 @@ hi User6 cterm=none ctermfg=darkgrey ctermbg=gray
 
 " 设置tab栏-------------------------------------------------
 " 选中的tab颜色
-hi SelectTabLine term=Bold cterm=Bold ctermfg=DarkYellow ctermbg=LightGray
-hi SelectPageNum cterm=None ctermfg=DarkRed ctermbg=LightGray
-hi SelectWindowsNum cterm=None ctermfg=DarkCyan ctermbg=LightGray
+hi SelectTabLine term=Bold cterm=Bold ctermfg=DarkYellow ctermbg=gray
+hi SelectPageNum cterm=Bold ctermfg=DarkRed ctermbg=gray
+hi SelectWindowsNum cterm=Bold ctermfg=DarkCyan ctermbg=gray
 " 未选中状态的tab
 hi NormalTabLine cterm=None ctermfg=Gray ctermbg=DarkGray
 hi NormalPageNum cterm=None ctermfg=Gray ctermbg=DarkGray
 hi NormalWindowsNum cterm=None ctermfg=Gray ctermbg=DarkGray
 " tab栏背景色
-hi TabLineFill term=reverse ctermfg=5 ctermbg=7 guibg=#6c6c6c
+hi TabLineFill term=reverse ctermfg=DarkGray ctermbg=Darkgray 
 
 function MyTabLine()
     let s = ''
